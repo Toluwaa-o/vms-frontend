@@ -110,7 +110,7 @@ export default function Reports() {
       >
         <select
           onChange={updateFilterData}
-          value={data.region}
+          value={filters.region}
           name="region"
           id="region"
           required
