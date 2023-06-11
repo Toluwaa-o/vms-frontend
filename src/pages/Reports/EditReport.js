@@ -26,6 +26,7 @@ export default function EditReport() {
     title: "",
     location: "",
     category: "",
+    region: "",
     description: "",
     media: [],
     status: "",
@@ -44,6 +45,7 @@ export default function EditReport() {
           location,
           category,
           description,
+          region,
           media,
           status,
           response,
@@ -54,6 +56,7 @@ export default function EditReport() {
           category,
           description,
           media,
+          region,
           status,
           response,
         });
@@ -80,8 +83,6 @@ export default function EditReport() {
     setErrMsg(null);
     setUi((prev) => ({ ...prev, disable: true }));
     const media = new FormData();
-
-    console.log(e.target.files[0]);
 
     if (e.target.files[0].type.startsWith("image"))
       media.append("image", e.target.files[0]);
@@ -116,6 +117,7 @@ export default function EditReport() {
       description: data.description,
       category: data.category,
       location: data.location,
+      region: data.region,
     };
     if (data.title !== "") reportData.title = data.title;
     if (data.media.length > 0) reportData.media = data.media;
@@ -189,14 +191,28 @@ export default function EditReport() {
           <option value="" disabled>
             Select Category
           </option>
-          <option value="Crime against person(s)">
-            Crime against person(s)
-          </option>
-          <option value="Crime against property">Crime against property</option>
+          <option value="Sexual Assault">Sexual Assault</option>
+          <option value="Domestic violence">Domestic Violence</option>
           <option value="Hate crime">Hate crime</option>
           <option value="Crime against morality">Crime against morality</option>
-          <option value="White-Collar crime">White-Collar crime</option>
-          <option value="Organized crime">Organized crime</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <select
+          onChange={dataUpdater}
+          value={data.region}
+          name="region"
+          id="region"
+          required
+        >
+          <option value="" disabled>
+            Select Region
+          </option>
+          <option value="Greater Accra">Greater Accra</option>
+          <option value="Ashanti">Ashanti</option>
+          <option value="Central Region">Central Region</option>
+          <option value="Volta Region">Volta Region</option>
+          <option value="Other">Other</option>
         </select>
 
         <label htmlFor="description">Description</label>

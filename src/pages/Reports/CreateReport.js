@@ -22,6 +22,7 @@ export default function CreateReport() {
     location: "",
     category: "",
     description: "",
+    region: ""
     media: [],
   });
 
@@ -69,6 +70,7 @@ export default function CreateReport() {
       description: data.description,
       category: data.category,
       location: data.location,
+      region: data.region
     };
     if (data.title !== "") reportData.title = data.title;
     if (data.media.length > 0) reportData.media = data.media;
@@ -140,14 +142,32 @@ export default function CreateReport() {
           <option value="" disabled>
             Select Category
           </option>
-          <option value="Crime against person(s)">
-            Crime against person(s)
+          <option value="Sexual Assault">
+            Sexual Assault
           </option>
-          <option value="Crime against property">Crime against property</option>
+          <option value="Domestic violence">Domestic Violence</option>
           <option value="Hate crime">Hate crime</option>
           <option value="Crime against morality">Crime against morality</option>
-          <option value="White-Collar crime">White-Collar crime</option>
-          <option value="Organized crime">Organized crime</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <select
+          onChange={dataUpdater}
+          value={data.region}
+          name="region"
+          id="region"
+          required
+        >
+          <option value="" disabled>
+            Select Region
+          </option>
+          <option value="Greater Accra">
+            Greater Accra
+          </option>
+          <option value="Ashanti">Ashanti</option>
+          <option value="Central Region">Central Region</option>
+          <option value="Volta Region">Volta Region</option>
+          <option value="Other">Other</option>
         </select>
 
         <label htmlFor="description">Description</label>

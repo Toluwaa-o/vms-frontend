@@ -15,7 +15,7 @@ export default function Reports() {
 
   const [filters, setFilter] = useState({
     search: "",
-    category: "all",
+    region: "all",
     sort: "all",
     status: "all",
   });
@@ -72,7 +72,7 @@ export default function Reports() {
 
     if (filters.search !== "") queryObject.search = filters.search;
 
-    if (filters.category !== "") queryObject.category = filters.category;
+    if (filters.region !== "") queryObject.region = filters.region;
 
     if (filters.sort !== "") {
       queryObject.sort = filters.sort;
@@ -110,21 +110,19 @@ export default function Reports() {
       >
         <select
           onChange={updateFilterData}
-          name="category"
-          id="category"
-          value={filters.category}
+          value={data.region}
+          name="region"
+          id="region"
+          required
         >
-          <option disabled value="all">
-            All Categories
+          <option value="" disabled>
+            Select Region
           </option>
-          <option value="Crime against person(s)">
-            Crime against person(s)
-          </option>
-          <option value="Crime against property">Crime against property</option>
-          <option value="Hate crime">Hate crime</option>
-          <option value="Crime against morality">Crime against morality</option>
-          <option value="White-Collar crime">White-Collar crime</option>
-          <option value="Organized crime">Organized crime</option>
+          <option value="Greater Accra">Greater Accra</option>
+          <option value="Ashanti">Ashanti</option>
+          <option value="Central Region">Central Region</option>
+          <option value="Volta Region">Volta Region</option>
+          <option value="Other">Other</option>
         </select>
 
         <select
@@ -221,7 +219,7 @@ export default function Reports() {
                 <th>Description</th>
                 <th>Category</th>
                 <th>Status</th>
-                <th>Location</th>
+                <th>Region</th>
               </tr>
             </thead>
 
@@ -234,7 +232,7 @@ export default function Reports() {
                     description={rep.description.slice(0, 40)}
                     category={rep.category}
                     status={rep.status}
-                    location={rep.location}
+                    region={rep.region}
                     id={rep._id}
                   />
                 );
