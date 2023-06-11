@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
 import Response from "./Response";
 import { UiActions } from "../../stores/UiSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function EditReport() {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ export default function EditReport() {
   const reportId =
     location.pathname.split("/")[location.pathname.split("/").length - 2];
   const dispatch = useDispatch();
-
+  const userType = useSelector((state) => state.user.user.userType);
   const [errMsg, setErrMsg] = useState(null);
 
   const [ui, setUi] = useState({
@@ -257,13 +257,15 @@ export default function EditReport() {
               {errMsg}
             </p>
           }
-          <p
-            role="button"
-            onClick={() => setHide(true)}
-            className="add-response"
-          >
-            Add Response
-          </p>
+          {data.status !== "responded" && userType === "admin" && (
+            <p
+              role="button"
+              onClick={() => setHide(true)}
+              className="add-response"
+            >
+              Add Response
+            </p>
+          )}
           {data.status !== "responded" && (
             <button
               disabled={ui.disable}
