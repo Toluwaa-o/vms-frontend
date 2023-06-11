@@ -1,8 +1,7 @@
 import { useState } from "react";
 
 const Resource = ({ h3, p, links }) => {
-  const [show, setShow] = useState(false)
-    
+  const [show, setShow] = useState(false);
 
   const clickHandler = () => {
     setShow((prev) => !prev);
@@ -11,7 +10,7 @@ const Resource = ({ h3, p, links }) => {
     <li>
       <span>
         <h3>{h3}</h3>
-        {show ? (
+        {!show ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="28"

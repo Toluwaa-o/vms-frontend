@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Questions = ({q, a}) => {
+const Questions = ({ q, a }) => {
   const [show, setShow] = useState(false);
 
   const clickHandler = () => {
@@ -10,7 +10,7 @@ const Questions = ({q, a}) => {
     <div>
       <span>
         <h4>{q}</h4>
-        {show ? (
+        {!show ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="27"
@@ -33,7 +33,7 @@ const Questions = ({q, a}) => {
         )}
       </span>
 
-      {show && <p dangerouslySetInnerHTML={{__html: a}} />}
+      {show && <p dangerouslySetInnerHTML={{ __html: a }} />}
     </div>
   );
 };

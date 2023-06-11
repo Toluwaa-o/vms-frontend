@@ -248,15 +248,9 @@ body {
   border-radius: 5px;
 }
 
-.part-1 span a:first-child {
+.part-1 span a {
   background: var(--pink);
   color: white;
-  width: fit-content;
-}
-
-.part-1 span a:last-child {
-  border: 4px solid var(--pink);
-  color: var(--pink);
   width: fit-content;
 }
 
@@ -1354,6 +1348,17 @@ main td a {
     font-size: 1.3em;
   }
 
+  .part-1 {
+    max-width: 70%;
+    padding: 2em;
+    margin: auto;
+  }
+
+  .part-1 span {
+    flex-direction: row;
+    margin: auto;
+  }
+
   .navbar {
     width: fit-content;
     position: fixed;
@@ -1366,9 +1371,37 @@ main td a {
     border: 2px solid white;
   }
 
+
+  .gethelp {
+    max-width: 70%;
+    margin: auto;
+  }
+
+  .gethelp > div:nth-child(2) > a {
+    max-width: 350px;
+    margin: auto;
+  }
+
+  .faq h2 {
+    padding-left: 10%;
+  }
+
+  .faq > section {
+    width: 70%;
+    margin: auto;
+  }
+
+  .faq section > div span {
+    grid-template-columns: 95% 5%;
+  }
+
   .navbar > a:nth-child(2) {
     align-items: center;
     text-transform: capitalize;
+  }
+
+  .footer {
+    padding-inline: 20%;
   }
 
   .main {
