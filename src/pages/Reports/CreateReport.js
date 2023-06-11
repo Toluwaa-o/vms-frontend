@@ -22,7 +22,7 @@ export default function CreateReport() {
     location: "",
     category: "",
     description: "",
-    region: ""
+    region: "",
     media: [],
   });
 
