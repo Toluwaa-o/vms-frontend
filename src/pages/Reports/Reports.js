@@ -115,7 +115,7 @@ export default function Reports() {
           id="region"
           required
         >
-          <option value="" disabled>
+          <option value="all">
             Select Region
           </option>
           <option value="Greater Accra">Greater Accra</option>
