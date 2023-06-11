@@ -70,7 +70,7 @@ export default function ExpandedReport() {
               )}
             </p>
             <p>
-              <span>Location:</span> {report.data.report.region} {report.data.report.location}
+              <span>Location:</span> {report.data.report.region}, {report.data.report.location}
             </p>
             <p
               style={{
