@@ -20,7 +20,7 @@ const Home = () => {
       <div className="part-1">
         <h1>You have rights as a victim of crime.</h1>
         <p>
-          If you have experienced a violent crime in Queensland at some point in
+          If you have experienced a violent crime at some point in
           your life, we can help.
           <br />
           <br />
