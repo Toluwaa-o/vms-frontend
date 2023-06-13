@@ -25,7 +25,7 @@ const Home = () => {
           <br />
           <br />
           We are a free and confidential service that aim to contribute to a
-          more victim-centric approach to crime management in Ghana, empowering
+          more victim-centric approach to victim management in Ghana, empowering
           victims and ensuring their rights are protected.
         </p>
 
