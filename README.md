@@ -1,4 +1,4 @@
-CRIME MANAGEMENT SYSTEM APP (FRONTEND)
+VICTIM MANAGEMENT SYSTEM APP (FRONTEND)
 
 Built With: React JS, CSS, React Router, Redux, Axios & ReCharts
 
@@ -18,4 +18,4 @@ Functionalities:
 Links:
 
 * API Used: https://cms-api-cd7r.onrender.com
-* Live Link: https://cms-toluwaa-o.vercel.app
+* Live Link: https://vms-toluwaa-o.vercel.app
